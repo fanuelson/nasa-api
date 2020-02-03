@@ -17,11 +17,11 @@ https://nasa-api-test.herokuapp.com/nasa/temperature
 
 - The API expects only one parameter: SOL
 
-- https://nasa-api-test.herokuapp.com/nasa/temperature?SOL=422
+- https://nasa-api-test.herokuapp.com/nasa/temperature?SOL=421
 
 Response:
 ```
-{"averageTemperature":-63.540400000000005}
+{"averageTemperature":-70.6378}
 ```
 
 <hr>
