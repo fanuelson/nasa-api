@@ -4,6 +4,9 @@
 
 The project is an API that returns the mars average temperature by the given SOL (Martian Days).
 
+**I'm using this link to make sure the values are correct:**
+
+https://mars.nasa.gov/insight/weather/
 
 # Run with docker
 
