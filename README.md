@@ -2,11 +2,39 @@
 
 # Project description:
 
-The project is an API that returns the mars average temperature by the given SOL (Martian Days).
+The project is an API that returns the Mars' average temperature in Fahrenheit by a given SOL (Martian Days).
 
 **I'm using this link to make sure the values are correct:**
 
 https://mars.nasa.gov/insight/weather/
+
+
+The API was deployed at heroku and it is available here:
+
+https://nasa-api-test.herokuapp.com/nasa/temperature
+
+<hr>
+
+- The API expects only one parameter: SOL
+
+- https://nasa-api-test.herokuapp.com/nasa/temperature?SOL=422
+
+Response:
+```
+{"averageTemperature":-63.540400000000005}
+```
+
+<hr>
+
+- If "SOL" parameter is not provided then it returns the average of all "SOLs" found.
+
+- https://nasa-api-test.herokuapp.com/nasa/temperature
+
+Response:
+```
+{"averageTemperature":-76.59888571428571}
+```
+
 
 # Run with docker
 
