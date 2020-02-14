@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.preoday.jsonnodewrapper.InsightWeatherJsonNode;
 
 @Service()
 public class NasaApiRequester {
@@ -27,9 +28,10 @@ public class NasaApiRequester {
 			return String.format("%s%s?api_key=%s&feedtype=json&ver=1.0", nasaApiBaseUrl, resource, nasaApiKey);
 		}
 		
-		public JsonNode requestMarsWeather() {
+		public InsightWeatherJsonNode requestMarsWeather() {
 			try {
-				return restTemplate.getForObject(this.mountUrl("/insight_weather/"), JsonNode.class);
+				JsonNode response = restTemplate.getForObject(this.mountUrl("/insight_weather/"), JsonNode.class); 
+				return new InsightWeatherJsonNode(response);
 			} catch(Exception e) {
 				logger.error("Request mars weather error", e);
 				throw e;
